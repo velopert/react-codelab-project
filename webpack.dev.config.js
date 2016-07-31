@@ -1,18 +1,20 @@
 var webpack = require('webpack');
- 
+var path = require('path');
+
 module.exports = {
- 
+
     entry: [
         './src/index.js',
         'webpack-dev-server/client?http://0.0.0.0:4000',
-        'webpack/hot/only-dev-server'
+        'webpack/hot/only-dev-server',
+        './src/style.css'
     ],
- 
+
     output: {
         path: '/',
         filename: 'bundle.js'
     },
- 
+
     devServer: {
         hot: true,
         filename: 'bundle.js',
@@ -31,14 +33,14 @@ module.exports = {
           timings: false,
           chunks: false,
           chunkModules: false
-        } 
+        }
     },
 
-    
+
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
- 
+
     module: {
         loaders: [
             {
@@ -48,8 +50,16 @@ module.exports = {
                     presets: ['es2015', 'react']
                 })],
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css-loader'
             }
         ]
+    },
+
+    resolve: {
+        root: path.resolve('./src')
     }
 
 
