@@ -12,8 +12,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.7",
+    "morgan": "^1.7.0",
     "path": "^0.12.7",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
