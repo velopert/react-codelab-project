@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
     render() {
@@ -18,7 +19,7 @@ class Header extends React.Component {
         return (
             <nav>
                 <div className="nav-wrapper blue darken-1">
-                    <a className="brand-logo center">MEMOPAD</a>
+                    <Link to="/" className="brand-logo center">MEMOPAD</Link>
 
                     <ul>
                         <li><a><i className="material-icons">search</i></a></li>
