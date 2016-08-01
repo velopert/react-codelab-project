@@ -3,12 +3,22 @@ import {
     AUTH_LOGIN_SUCCESS,
     AUTH_LOGIN_FAILURE
 } from './ActionTypes';
+import axios from 'axios';
 
 /* ====== AUTH ====== */
 
 /* LOGIN */
 export function loginRequest(username, password) {
-    /* to be implemented */
+    return (dispatch) => {
+            dispatch(login());
+
+            return axios.post('/api/account/signin', { username, password })
+            .then((response) => {
+                dispatch(loginSuccess(username));
+            }).catch((error) => {
+                dispatch(loginFailure());
+            });
+    };
 }
 
 export function login() {
@@ -25,6 +35,6 @@ export function loginSuccess(username) {
 
 export function loginFailure() {
     return {
-        type: AUTH_LOGIN_FAILIURE
+        type: AUTH_LOGIN_FAILURE
     };
 }
