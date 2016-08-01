@@ -66,3 +66,25 @@ a {
     border-top: 1px solid #E9E9E9;
     padding-bottom: 21px;
 }
+
+/* wrapper */
+.wrapper {
+    margin-top: 20px;
+}
+
+/* WRITE */
+
+.write .materialize-textarea {
+    padding: 0px;
+    padding-bottom: 36px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+
+.write .card-content {
+    padding-bottom: 10px;
+}
+
+.write .card-action {
+    text-align: right;
+}
