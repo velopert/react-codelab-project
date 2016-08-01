@@ -1,3 +1,68 @@
 body {
     background-color: #ECEFF1;
 }
+
+/* Authentication */
+.auth {
+  margin-top: 50px;
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+    font-weight: 100;
+    font-size: 80px;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+a.logo {
+    color: #5B5B5B;
+}
+
+a {
+    cursor: pointer;
+}
+
+.auth .card {
+    width: 400px;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 480px) {
+  .auth .card {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 60px;
+  }
+}
+
+.auth .header {
+    font-size: 18px;
+}
+
+.auth .row {
+    margin-bottom: 0px;
+}
+
+.auth .username {
+  margin-top: 0px;
+}
+
+.auth .btn {
+    width: 90%;
+}
+
+.auth .footer {
+    border-top: 1px solid #E9E9E9;
+    padding-bottom: 21px;
+}

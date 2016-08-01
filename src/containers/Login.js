@@ -1,10 +1,11 @@
 import React from 'react';
+import { Authentication } from 'components';
 
 class Login extends React.Component {
     render() {
         return (
             <div>
-                Login
+                <Authentication mode={true}/>
             </div>
         );
     }
