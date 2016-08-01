@@ -25,6 +25,6 @@ export function loginSuccess(username) {
 
 export function loginFailure() {
     return {
-        type: AUTH_LOGIN_FAILIURE
+        type: AUTH_LOGIN_FAILURE
     };
 }
