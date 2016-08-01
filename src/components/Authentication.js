@@ -11,6 +11,8 @@ class Authentication extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
+        this.handleRegister = this.handleRegister.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
     handleChange(e) {
@@ -34,6 +36,31 @@ class Authentication extends React.Component {
         );
     }
 
+    handleRegister() {
+        let id = this.state.username;
+        let pw = this.state.password;
+
+        this.props.onRegister(id, pw).then(
+            (success) => {
+                if(!success) {
+                    this.setState({
+                        password: ''
+                    });
+                }
+            }
+        );
+    }
+
+    handleKeyPress(e) {
+        if(e.charCode ===13 ){
+            if(this.props.mode) {
+                this.handleLogin();
+            } else {
+                this.handleRegister();
+            }
+        }
+    }
+
     render() {
         const inputBoxes = (
             <div>
@@ -54,7 +81,8 @@ class Authentication extends React.Component {
                     type="password"
                     className="validate"
                     value={this.state.password}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    onKeyPress={this.handleKeyPress}/>
                 </div>
             </div>
         );
@@ -84,7 +112,7 @@ class Authentication extends React.Component {
            <div className="card-content">
                <div className="row">
                    { inputBoxes }
-                   <a className="waves-effect waves-light btn">CREATE</a>
+                   <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
                </div>
            </div>
        );
