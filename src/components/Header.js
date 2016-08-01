@@ -6,7 +6,7 @@ class Header extends React.Component {
 
         const loginButton = (
             <li>
-                <a><i className="material-icons">vpn_key</i></a>
+                <Link to="/login"><i className="material-icons">vpn_key</i></Link>
             </li>
         );
 
