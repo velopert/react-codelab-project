@@ -36,7 +36,8 @@ export function login() {
 
 export function loginSuccess(username) {
     return {
-        type: AUTH_LOGIN_SUCCESS
+        type: AUTH_LOGIN_SUCCESS,
+        username
     };
 }
 
@@ -100,9 +101,10 @@ export function getStatus() {
     };
 }
 
-export function getStatusSuccess() {
+export function getStatusSuccess(username) {
     return {
-        type: AUTH_GET_STATUS_SUCCESS
+        type: AUTH_GET_STATUS_SUCCESS,
+        username
     };
 }
 
