@@ -32,7 +32,8 @@ export function login() {
 
 export function loginSuccess(username) {
     return {
-        type: AUTH_LOGIN_SUCCESS
+        type: AUTH_LOGIN_SUCCESS,
+        username
     };
 }
 

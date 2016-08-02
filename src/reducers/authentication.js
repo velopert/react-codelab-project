@@ -36,7 +36,7 @@ export default function authentication(state, action) {
                 },
                 status: {
                     isLoggedIn: { $set: true },
-                    currentuser: { $set: action.username }
+                    currentUser: { $set: action.username }
                 }
             });
         case types.AUTH_FAILURE:
