@@ -11,6 +11,8 @@ class MemoList extends React.Component {
                         data={memo}
                         ownership={ memo.writer===this.props.currentUser }
                         key={memo._id}
+                        onEdit={this.props.onEdit}
+                        index={i}
                     />
                 );
             });
@@ -24,12 +26,16 @@ class MemoList extends React.Component {
 
 MemoList.propTypes = {
     data: React.PropTypes.array,
-    currentUser: React.PropTypes.string
+    currentUser: React.PropTypes.string,
+    onEdit: React.PropTypes.func
 };
 
 MemoList.defaultProps = {
     data: [],
-    currentUser: ''
+    currentUser: '',
+    onEdit: (id, index, contents) => {
+        console.error('onEdit not defined');
+    }
 };
 
 export default MemoList;
