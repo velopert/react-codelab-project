@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "axios": "^0.13.1",
+    "babel-polyfill": "^6.9.1",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
