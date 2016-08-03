@@ -23,6 +23,21 @@ class Memo extends React.Component {
         });
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        let current = {
+            props: this.props,
+            state: this.state
+        };
+
+        let next = {
+            props: nextProps,
+            state: nextState
+        };
+
+        let update = JSON.stringify(current) !== JSON.stringify(next);
+        return update;
+    }
+
     componentDidUpdate(prevProps, prveState) {
         // WHEN COMPONENT UPDATES, INITIALIZE DROPDOWN
         // (TRIGGERED WHEN LOGGED IN)
@@ -71,7 +86,7 @@ class Memo extends React.Component {
     }
 
     render() {
-
+        console.log(this.props.data);
         var { data, ownership } = this.props;
 
         const dropDownMenu = (
