@@ -18,6 +18,10 @@ const initialState = {
     remove: {
         status: 'INIT',
         error: -1
+    },
+    star: {
+        status: 'INIT',
+        error: -1
     }
 };
 
@@ -132,6 +136,33 @@ export default function memo(state, action) {
         case types.MEMO_REMOVE_FAILURE:
             return update(state, {
                 remove: {
+                    status: { $set: 'FAILURE' },
+                    error: { $set: action.error }
+                }
+            });
+
+        /* MEMO STAR */
+        case types.MEMO_STAR:
+            return update(state, {
+                star: {
+                    status: { $set: 'WAITING '},
+                    error: { $set: -1 }
+                }
+            });
+        case types.MEMO_STAR_SUCCESS:
+            return update(state, {
+                star: {
+                    status: { $set: 'SUCCESS' }
+                },
+                list: {
+                    data: {
+                        [action.index]: { $set: action.memo }
+                    }
+                }
+            });
+        case types.MEMO_STAR_FAILURE:
+            return update(state, {
+                star: {
                     status: { $set: 'FAILURE' },
                     error: { $set: action.error }
                 }
