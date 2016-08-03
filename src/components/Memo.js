@@ -87,7 +87,6 @@ class Memo extends React.Component {
     }
 
     render() {
-        console.log(this.props.data);
         var { data, ownership } = this.props;
 
         const dropDownMenu = (
