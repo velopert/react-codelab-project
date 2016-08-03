@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev-server": "webpack-dev-server"
+    "clean": "rm -rf build public/bundle.js",
+    "build": "babel server --out-dir build --presets=es2015 && webpack",
+    "start": "cross-env NODE_ENV=production node ./build/main.js",
+    "development": "cross-env NODE_ENV=development nodemon --exec babel-node --presets=es2015 ./server/main.js --watch server"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "path": "^0.12.7",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
