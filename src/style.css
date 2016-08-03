@@ -155,3 +155,68 @@ a {
     font-weight: bold;
     color: #777;
 }
+
+
+/* ANIMATION */
+@-webkit-keyframes memo-enter {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes memo-enter {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.memo-enter {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: memo-enter;
+    animation-name: memo-enter;
+}
+
+/* ANIMATION */
+@-webkit-keyframes memo-leave {
+    0% {
+      opacity: 1;
+      max-height: 1080px;
+    }
+    50% {
+      opacity: 0;
+       -webkit-transform: translateX(100px);
+    }
+    100% {
+        max-height: 0px;
+    }
+}
+
+@keyframes memo-leave {
+    0% {
+      opacity: 1;
+      max-height: 1080px;
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+        max-height: 0px;
+    }
+}
+
+.memo-leave {
+    max-height: 0px;
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-name: memo-leave;
+    animation-name: memo-leave;
+}
