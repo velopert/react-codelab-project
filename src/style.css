@@ -1,5 +1,6 @@
 body {
     background-color: #ECEFF1;
+    overflow-x: hidden;
 }
 
 /* Authentication */
@@ -219,4 +220,17 @@ a {
     animation-duration: 1s;
     -webkit-animation-name: memo-leave;
     animation-name: memo-leave;
+}
+
+
+/* WALL HEADER */
+.empty-page {
+    font-size: 30px;
+    text-align: center;
+    color: #4D4D4D;
+}
+
+.wall-info {
+    font-size: 30px;
+    text-align: center;
 }

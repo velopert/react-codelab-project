@@ -66,14 +66,13 @@ export function memoListRequest(isInitial, listType, id, username) {
 
         let url = '/api/memo';
 
-        /* url setup depending on parameters,
-           to  be implemented.. */
         if(typeof username === "undefined") {
             // username not given, load public memo
             url = isInitial ? url : `${url}/${listType}/${id}`;
-            // or url + '/' + listType + '/' +  id
+            // or url + '/' + listType + Z'/' +  id
         } else {
-            /* TO BE IMPLEMENTED */
+            // load memos of a user
+            url = isInitial ? `${url}/${username}` : `${url}/${username}/${listType}/${id}`;
         }
 
         return axios.get(url)
