@@ -40,7 +40,7 @@ export default function authentication(state, action) {
                     currentUser: { $set: action.username }
                 }
             });
-        case types.AUTH_FAILURE:
+        case types.AUTH_LOGIN_FAILURE:
             return update(state, {
                 login: {
                     status: { $set: 'FAILURE' }
